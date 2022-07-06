@@ -2,6 +2,8 @@
 
 /**
  * print_alphabet - prints the alphabet in lowercase, followed by a new line.
+ *
+ * _putchar: prints spacing
  */
 void print_alphabet(void)
 {
