@@ -1,24 +1,30 @@
 #include "main.h"
 
 /**
- * rev_string - a function that reverses a string
- * @s: input to reverse
- * Return: string and in reverse
+ * sqrt_check - checks for the square root of c
+ * @g:guess at sqrt
+ * @c: number to find sqrt of
+ *
+ * Return: -1 or sqrt of c
  */
-void rev_string(char *s)
+int sqrt_check(int g, int c)
 {
-	char rev = s[0];
-	int fcounter = 0;
-	int i;
+	if (g * g == c)
+		return (g);
+	if (g * g > c)
+		return (-1);
+	return (sqrt_check(g + 1, c));
+}
 
-	while (s[fcounter] != '\0')
-		fcounter++;
-
-	for (i = 0; i < fcounter; i++)
-	{
-		fcounter--;
-		rev = s[i];
-		s[i] = s[fcounter];
-		s[fcounter] = rev;
-	}
+/**
+ * _sqrt_recursion - returns the natural square root of a number
+ * @n: integer to find sqrt of
+ *
+ * Return: natural square root or -1
+ */
+int _sqrt_recursion(int n)
+{
+	if (n == 0)
+		return (0);
+	return (sqrt_check(1, n));
 }
