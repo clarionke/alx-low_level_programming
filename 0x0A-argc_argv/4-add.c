@@ -9,9 +9,15 @@
  * @argv: arguments passed
  * Return: always 0
  */
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
-	int a, b, addition;
+	int a, b, sum;
+
+	if (argc == 1)
+	{
+		printf("0\n");
+		return (0);
+	}
 
 	for (a = 1; a < argc; a++)
 	{
@@ -23,8 +29,8 @@ int main(int argc, char **argv)
 				return (1);
 			}
 		}
-		addition = addition + atoi(argv[a]);
+		sum += atoi(argv[a]);
 	}
-	printf("%i\n", addition);
+	printf("%d\n", sum);
 	return (0);
 }
