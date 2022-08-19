@@ -1,26 +1,24 @@
-#include <stdlib.h>
-#include <time.h>
-#include <stdio.h>
-
-/* more headers goes there */
+void print_shape(int num1, int num2)
+{
+    int idx1, idx2;
+    for (idx1 = 0; idx1 < num1; idx1++)
+    {
+        for (idx2 = 0; idx2 < num2; idx2++)
+        {
+            printf('#');
+        }
+        printf('\n');
+    }
+}
 
 /**
-*main - assign a random number to the variable n each time it is
-*executed based on condition
+* main - calls print_shape()
 *
-*Return: Always 0
-*/
+* Return: Always 0.
+**/
+
 int main(void)
 {
-	int n;
-
-	srand(time(0));
-	n = rand() - RAND_MAX / 2;
-	if (n > 0)
-		printf("%d is positive\n", n);
-	if (n == 0)
-		printf("%d is zero\n", n);
-	if (n < 0)
-		printf("%d is negative\n", n);
-	return (0);
+    print_shape(4, 3);
+    return (0);
 }
